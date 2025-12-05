@@ -1,0 +1,12 @@
+pandas
+numpy
+python-dotenv
+typing
+ipykernel
+
+openai
+langchain-community
+langchain-core
+langchain
+langchain-groq
+langchain-openai
