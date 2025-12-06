@@ -35,7 +35,7 @@ class ChatLLM:
         if not api_key:
             raise ValueError("GROQ_API_KEY not found in environment variables.")
 
-        model_name = self.model_name or 'llama-3.3-70b-versatile'
+        model_name = self.model_name
         
         return ChatGroq(
             api_key=api_key,

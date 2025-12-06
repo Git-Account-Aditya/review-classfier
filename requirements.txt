@@ -3,6 +3,7 @@ numpy
 python-dotenv
 typing
 ipykernel
+joblib
 
 openai
 langchain-community
