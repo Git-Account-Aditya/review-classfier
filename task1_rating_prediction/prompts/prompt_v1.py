@@ -1,38 +1,21 @@
 from langchain_core.prompts import PromptTemplate
-from langchain_core.output_parsers import PydanticOutputParser
 
-from pydantic import BaseModel, Field
-from typing import List, Tuple, Literal, Optional
-from dotenv import load_dotenv
-import os
-
-# load all environment variables
-load_dotenv()
-
-
-class StructuredOutput(BaseModel):
-    predicted_stars: Literal[1, 2, 3, 4, 5] = Field(description="The predicted number of stars given by user to the product.")
-    explanation: str = Field(description="The explanation for the predicted number of stars.")
 
 def get_prompt_v1():
     SYSTEM_PROMPT = """
-    You are a helpful assistant that can predict the number of stars given by user to the product based on the review text.
+    You are an expert sentiment analysis system. Your task is to predict the star rating (1-5) for a given review.
 
-    Here is the review text:
-    {review_text}
+    Analyze the following review properties:
+    Review Text: {review_text}
+    Reactions: {reactions}
 
-    Use the structured output format to return your prediction.
-    {instructions}
+    Predict the star rating (1-5) for the given review and provide a concise explanation for your prediction in the explanation field that justifies the star rating.
     """
-
-    parser = PydanticOutputParser(pydantic_object=StructuredOutput)
 
     prompt = PromptTemplate(
         template=SYSTEM_PROMPT,
-        input_variables=['review_text'],
-        partial_variables={'instructions': parser.get_format_instructions()}
+        input_variables=['review_text', 'reactions']
     )
-
-    return prompt, parser
+    return prompt
     
     
