@@ -12,9 +12,12 @@ dependencies = [
     "langchain-core>=1.1.1",
     "langchain-groq>=1.1.0",
     "langchain-openai>=1.1.0",
+    "matplotlib>=3.10.7",
     "numpy>=2.3.5",
     "openai>=2.9.0",
     "pandas>=2.3.3",
     "python-dotenv>=1.2.1",
+    "scikit-learn>=1.7.2",
+    "seaborn>=0.13.2",
     "typing>=3.10.0.0",
 ]

@@ -4,6 +4,7 @@ python-dotenv
 typing
 ipykernel
 joblib
+scikit-learn
 
 openai
 langchain-community
@@ -11,3 +12,6 @@ langchain-core
 langchain
 langchain-groq
 langchain-openai
+
+matplotlib
+seaborn
